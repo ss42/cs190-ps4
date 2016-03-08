@@ -73,8 +73,7 @@ let thisMonthsRentals = [
 
 func totalRentalHours(rentals: [CarRental]) -> Double {
     let total: Double = 0.0
-    return thisMonthsRentals.reduce(total) {total, rental in total + rental.hours}
-    //5.0 // a meaningless hard-coded implementation for you to replace with an actual implementation
+    return thisMonthsRentals.reduce(total) {total, rentals in total + rentals.hours}
 }
 
 import XCTest
