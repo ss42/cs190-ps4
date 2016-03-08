@@ -37,7 +37,11 @@ func anyPower(n: Int) -> (Int->Int) {
 }
 
 func raiseArrayToPower(n: Int, arrayOfInts: [Int]) -> [Int] {
-    return [1, 5] // a meaningless hard-coded implementation for you to replace with an actual implementation
+    return arrayOfInts.map(anyPower(n))
+    
+        //{value in anyPower(value)}
+    //[1, 5]
+    // a meaningless hard-coded implementation for you to replace with an actual implementation
 }
 
 /*:
@@ -47,7 +51,7 @@ Implement the following function using filter. When you have it implemented righ
 */
 
 func keepOnlyEvenValues(arrayOfInts: [Int]) -> [Int] {
-    return [1, 5] // a meaningless hard-coded implementation for you to replace with an actual implementation
+    return arrayOfInts.filter {value in value % 2 == 0 }
 }
 
 /*:
@@ -68,7 +72,9 @@ let thisMonthsRentals = [
 ]
 
 func totalRentalHours(rentals: [CarRental]) -> Double {
-    return 5.0 // a meaningless hard-coded implementation for you to replace with an actual implementation
+    let total: Double = 0.0
+    return thisMonthsRentals.reduce(total) {total, rental in total + rental.hours}
+    //5.0 // a meaningless hard-coded implementation for you to replace with an actual implementation
 }
 
 import XCTest
